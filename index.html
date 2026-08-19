@@ -2,32 +2,29 @@
 <html lang="pt-br">
 <head>
     <style>
-
         header {
-background-color: rgb(183, 0, 255);
-color:aliceblue;
-text-align: center;
-max-width: 800px;
-margin: 0 auto;
-padding: 16px;
-}
+            background-color: rgb(183, 0, 255);
+            color: aliceblue;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-main {
-background-color: #FFFFFF;
-color: #561863;
-text-align: center;
-max-width: 800px;
-margin: 0 auto;
-padding: 16px;
-}
+        main {
+            background-color: #FFFFFF;
+            color: #561863;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-img{
-    width: 80px;
-    height: 400px;
-}
-
+        img {
+            width: 80px;
+            height: 400px;
+        }
     </style>
-
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,31 +32,33 @@ img{
 </head>
 <body>
     <header>
-<h1>Meu blog filmes.</h1>
- <p>Blog voltado a novidades e lançamentos sobre  filmes.</p>
+        <h1>Meu blog filmes.</h1>
+        <p>Blog voltado a novidades e lançamentos sobre filmes.</p>
     </header>
     <main>
-        <img src="imagem crystine png" alt="Claquete de cinema no centro com o texto "FILMES BLOG", cercada por pipoca, rolos de filme e luzes brilhantes sobre um fundo azul escuro com silhuetas de uma plateia.">
-<h2>Meu primeiro post.</h2>
- <p>Por:Crystine isabele.</p>
- <p>Ola bem vindos ao blogisabele irei compartilhar filmes do qual eu assisto e gosto.</p>   
- <button>💜​ <span>0</span></button>
- <button>👍​ <span>0</span></button>
-    </div>
-
+        <!-- Corrigidas as aspas duplas internas do alt que quebravam o HTML -->
+        <img src="imagem crystine png" alt="Claquete de cinema no centro com o texto 'FILMES BLOG', cercada por pipoca, rolos de filme e luzes brilhantes sobre um fundo azul escuro com silhuetas de uma plateia.">
+        <h2>Meu primeiro post.</h2>
+        <p>Por: Crystine Isabele.</p>
+        <p>Olá, bem-vindos ao blogisabele! Irei compartilhar filmes dos quais eu assisto e gosto.</p>   
+        <button>💜 <span>0</span></button>
+        <button>👍 <span>0</span></button>
     </main>
  
- 
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        // Usamos forEach para adicionar o evento de clique a CADA botão da lista
+        botoes.forEach(botao => {
+            botao.addEventListener("click", function() {
+                // 'this' se refere ao botão específico que foi clicado
+                let texto = this.querySelector("span");
+                
+                // Converte o texto para número, soma 1 e atualiza na tela
+                let contador = parseInt(texto.textContent);
+                texto.textContent = contador + 1;
+            });
+        });
+    </script>
 </body>
-<script>
-const botoes = document.querySelectorAll("button");
-botao.addEventListener("click", botaoClicado);
-
-
-function botaoClicado(){
-    console.log("fui clicado");
-   let  texto = botao.querySelector("span");
-   texto.textContent++;
-}
-</script>
 </html>
